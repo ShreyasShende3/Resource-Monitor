@@ -1,20 +1,16 @@
 function updateInformation() {
-    // Use AJAX to fetch resource information from your Python script
+    
     fetch('/api/resource-info')
         .then(response => response.json())
         .then(data => {
-            // Log the received data to the console for debugging
             console.log('Received data:', data);
 
-            // Check if the required properties exist before accessing them
             if (data && data.memoryUsage && data.memoryUsage.percent !== undefined &&
                 data.diskUsage && data.diskUsage['C:\\'] && data.diskUsage['C:\\'].percent !== undefined &&
                 data.networkUsage) {
 
-                // Log network usage data to the console
                 console.log('Network Usage:', data.networkUsage);
 
-                // Create the HTML content dynamically with separate tables
                 const htmlContent = `
                     <div class="table-container">
                         <h2>System Information</h2>
@@ -81,7 +77,6 @@ function updateInformation() {
                     </div>
                 `;
 
-                // Update the content dynamically
                 document.getElementById('resource-info').innerHTML = htmlContent;
             } else {
                 console.error('Received data is missing required properties.');
@@ -90,5 +85,4 @@ function updateInformation() {
         .catch(error => console.error('Error fetching resource information:', error));
 }
 
-// Initial update when the page loads
 updateInformation();
