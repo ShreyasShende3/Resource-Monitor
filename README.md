@@ -60,7 +60,7 @@ python main.py
 3) Open a web browser and navigate to http://127.0.0.1:5000/ to see the output.
 
 You should see the following output:
-![Output]([https://github.com/ShreyasShende3/Resource-Monitor/blob/main/Screenshot%20(67).png])
+![Output](https://github.com/ShreyasShende3/Resource-Monitor/blob/main/Screenshot%20(67).png)
 
 4) Click the Update button and wait for a few seconds to see the updated resource usage.
 
